@@ -71,20 +71,26 @@ The Obtained error values are:
  
 To quantify the error from the centroid to the measured positions for both the open and occluded stationary RTK datasets, a comparable methodology is applied. Initially, the centroid of each dataset is determined through the calculation of mean values for the easting and northing coordinates. Subsequently, the Euclidean distance from each data point to its respective centroid is computed. The final step involves averaging these distances, yielding a singular error value for each dataset. This process provides a succinct and effective means of assessing the accuracy of measured positions concerning the centroid in both open and occluded stationary RTK datasets.
 ![image](https://github.com/annadurai-ka/Underactuated-Robot-finger/assets/156352281/b49ca3b4-e488-446b-87a8-cfe9cb27c24a)
+
 Fig 1: RTK – Differences in Easting vs. Northing (Stationary and Occluded)
+
 ![image](https://github.com/annadurai-ka/Underactuated-Robot-finger/assets/156352281/4ff09e02-6092-41a3-82b0-4859b8047d64)
+
 Fig 2: RTK - Histogram of Euclidean Distances to Centroid.
 
 ![image](https://github.com/annadurai-ka/Underactuated-Robot-finger/assets/156352281/48c7b565-0ff4-4402-812e-3f400014128d)
+
 Fig 3: RTK - Stationary Altitude VS Time
 
 ![image](https://github.com/annadurai-ka/Underactuated-Robot-finger/assets/156352281/ab6d7051-5140-470c-b40c-cc3c8878776e)
+
 Fig 4: RTK Northing vs. Easting with Best Fit line
 
 The obtained error value from the above Fig. 4 is as follows:
 Root Mean Squared Error (RMSE) from Line of Best Fit to Walking Data: 0.12850647818168368 m.
 
 ![image](https://github.com/annadurai-ka/Underactuated-Robot-finger/assets/156352281/e1f94363-fdbe-4452-8102-0cbb6bff7735)
+
 Fig 5: RTK - Moving Altitude VS Time
 
 To compute the quantitative (numerical) error from the centroid to the measured positions for both the open and occluded stationary datasets, adhere to the following procedure:
@@ -103,6 +109,7 @@ To compute the quantitative (numerical) error from the centroid to the measured 
 	  b. Average Error Formula: Average Error = (1/n) * Σ(Distance) for i = 1 to n, where n is the number of points in the dataset.
 
 ![image](https://github.com/annadurai-ka/Underactuated-Robot-finger/assets/156352281/7cde764a-422c-4b7e-8489-8057d6824d65) 
+
 Fig 6: GPS Puck - Stationary northing vs. easting graph
 
 The Obtained error values are:
@@ -113,6 +120,7 @@ The Obtained error values are:
 The process involves fitting a line to the walking data, predicting the dependent variable based on this line, calculating the error between predicted and actual values, and obtaining the average error using the Euclidean distance. These steps provide a comprehensive assessment of the accuracy of the line of best fit for the walking dataset with the help of the NumPy tool.
 
 ![image](https://github.com/annadurai-ka/Underactuated-Robot-finger/assets/156352281/fd9f714d-bf7a-459d-8daa-72ece6d2708d)
+
 Fig 7: GPS Puck - Northing vs. Easting graph with Best Fit line
 
 The obtained error value from the above Fig. 4 is as follows:
