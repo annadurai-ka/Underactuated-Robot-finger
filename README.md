@@ -70,7 +70,8 @@ Also Plotted the 3D axis graph for the Range of motion achieved by the Robotic f
 
 **SINGULARITIES**
 	When the Robotic finger is fully stretched out in a vertical direction as shown in Fig. 10, It cannot rotate backward side beyond that stretched. It leads to singularity for the robotic finger and also the fingertip bends to the optimum distance because of the singularity design as well as the length covered by the linear motion of the actuator.
-  ![image](https://github.com/annadurai-ka/Underactuated-Robot-finger/assets/156352281/b6bda650-f0ad-4666-96f7-e39f384e487a)
+ 
+![image](https://github.com/annadurai-ka/Underactuated-Robot-finger/assets/156352281/b6bda650-f0ad-4666-96f7-e39f384e487a)
 ![image](https://github.com/annadurai-ka/Underactuated-Robot-finger/assets/156352281/52a149af-7808-4e0f-9677-c60797a8dac6)
 
 Fig.10. Singularities
