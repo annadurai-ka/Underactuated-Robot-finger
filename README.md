@@ -27,6 +27,7 @@ b. Tools required
 
 A Robot Operating System (ROS) is utilized to collect data from the GPS receiver. This is an open-source software development tool for the applications of robotics. Specifically, ROS Noetic Ninjemys which was released on May 23rd, 2020, is used to perform the tasks to obtain the GNSS values. This is mainly focused on the Ubuntu 20.04 releases to perform well. 
 In addition to ROS Noetic Ninjemys, the following tools are used for this experiment.
+
 	1. Python – version 3.12.2 
 	2. Visual Studio Code – version 1.86 
 	3. Minicom
@@ -38,6 +39,7 @@ In addition to ROS Noetic Ninjemys, the following tools are used for this experi
 
  Initially, the workspace had been set up with the installation of ROS Noetic Ninjemys, minicom, Python, Visual Studio Code, and Turbo87’s Package. After the installations, we set up the ROS environment variables and built a catkin workspace. Then, we created a new package in the catkin workspace using the “catkin create pkg” command. 
 Subsequently, we wrote a Python script to read in and parse a GNGGA string which is required for converting the string to latitude, longitude, UTC, fix quality, and HDOP parameters. Then, we converted latitude and longitude into UTM values with the help of the UTM package. Parallelly, we made a custom GPS message named “Customgps.msg” in the appropriate directory with the following fields:
+
 	header (type: Header)
 	latitude (type: float64)
 	longitude (type: float64)
@@ -49,7 +51,9 @@ Subsequently, we wrote a Python script to read in and parse a GNGGA string which
 	fix_quality (type: uint8)
 	hdop (type: float64)
 	gpgga_read (type: string)
+ 
 Afterward, we published the custom GPS message and saved the collected data to a ROSbag. The collected ROSbag data should be converted to other file types so, we converted the data in a CSV file using a Python script to read in the bag. Later, the system had been set up to read the data from the serial port using Minicom and we wrote a launch file and made the driver accept any port. Finally, the obtained CSV file is processed to get the graph under the following conditions:
+
 	a. Collect stationary data in an open area.
 	b. Collect stationary data in an occluded area.
 	c. Collect linear moving data for approximately 200 meters.
@@ -61,6 +65,7 @@ The experimental results were plotted in graphical representation. Let us explor
 A. Graphical representation with calculations
 
 The Obtained error values are:
+
 	1. Average error from centroid for open data: 0.06118047828460524 m 
 	2. Average error from centroid for occluded data: 0.8012467376398961 m
  
@@ -87,12 +92,13 @@ To compute the quantitative (numerical) error from the centroid to the measured 
 1. Compute the centroid of each dataset.
 	a. Calculate the mean value of the easting and northing coordinates for each dataset to determine the centroid.
 	b. Centroid Formula:
+
 	  1. Centroid (Cx, Cy) = (1/n) * Σ(xi, yi) for i = 1 to n, where n is the number of points in the dataset.
 	  2. Cx = (1/n) * Σ(xi) and Cy = (1/n) * Σ(yi)
-2. Determine the Euclidean distance from each point to the centroid.
+3. Determine the Euclidean distance from each point to the centroid.
 	  a. For each point (xi, yi), compute the distance to the centroid (Cx, Cy) using the Euclidean distance formula.
 	  b. Euclidean Distance Formula: Distance = √((xi - Cx)^2 + (yi - Cy)^2)
-3. Calculate the average distances to obtain a singular error value for each dataset.
+4. Calculate the average distances to obtain a singular error value for each dataset.
 	  a. After determining the distance from each point to the centroid, average these distances to derive a singular error value for each dataset.
 	  b. Average Error Formula: Average Error = (1/n) * Σ(Distance) for i = 1 to n, where n is the number of points in the dataset.
 
@@ -100,6 +106,7 @@ To compute the quantitative (numerical) error from the centroid to the measured 
 Fig 6: GPS Puck - Stationary northing vs. easting graph
 
 The Obtained error values are:
+
 	1. Average error from centroid for open data: 8.497042283267776 m.
 	2. Average error from centroid for occluded data: 17.23220719015375 m.
  
